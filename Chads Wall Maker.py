@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Written on 2018-10-24 and 2018-10-25 by sjaak31367 to make creating/editing texturemaps(?) for walls in Terraria easier, and (more) automated/automatable/faster. (Yes I am aware that this file is an ugly bodge, but it works okay?)
 # Copyright: Feel free to use for personal/non-commercial/commercial/other uses, and or to copy/modify/change/redistribute/do with it as you please, as long as do not change the copyright of this file. Credit is not needed, but would be nice :)
-# Warranty: I won't give any warranty for what you do or don't with script/software, I can tell you it _SHOULD_ work without shitting all over your floor, but if it does do that somehow 1) I shall not be held liable. 2) Please do tell me as I'd be interested to see how that managed to happen.
+# Warranty: I won't give any warranty for what you do or don't with script/software, I can tell you it _SHOULD_ work without pooping all over your floor, but if it does do that somehow 1) I shall not be held liable. 2) Please do tell me as I'd be interested to see how that managed to happen.
 # Greetings and many time-savings wished upon you! ~Sjaak
 
 from PIL import Image
