@@ -1,11 +1,11 @@
 # Chad's Wall Maker
 Quick python script to create texture files for walls for in Terraria.
 
-#### Prerequisites:
+### Prerequisites:
 [Python 2.* 32-bit/x86](https://www.python.org/downloads/) - The language in which this was written  
 [Python Imaging Library](https://pypi.org/project/Pillow/#files) - Python module used for image manipulation (make sure to get the version build for the python version you installed, and has the same amount of bits (32/64) as the python installation) (If you're on Windows, scroll down all the way for the Windows installers)
 
-#### First run:
+### First run:
 Windows:  
 1) Place "Chads Wall Maker.py" and "Chads Wall Maker.cmd" in an empty folder  
 2) Double click "Chads Wall Maker.cmd" (the one with the gear icon)  
@@ -20,7 +20,7 @@ Unix/Mac/Other:
    The First run should generate an input directory (assuming write privileges)  
 4) Run the file again and you should get some more info.  
 
-#### Usage (after first run):
+### Usage (after first run):
 Windows:  
 1) Put your wall image files in the input folder. (see input image format)  
 2) Double click "Chads Wall Maker.cmd"  
@@ -36,14 +36,14 @@ Unix/Mac/Other:
 5) ???  
 6) Profit!  
 
-#### Example:
+### Example:
 Image file in "inWalls" directory: (also a template)  
 ![alt text](inWalls/Example.png)  
 Run the script.  
 Image file in "outWalls" directory:  
 ![alt text](outWalls/Example.png)  
 
-#### FAQ / HELP!
+### FAQ / HELP!
 "Can it process multiple images in 1 run?"  
 - Yes, just put them all in the "inWalls" directory.  
 
@@ -69,7 +69,7 @@ Errors:
 Other:  
 None that I can think of, if you have questions unanswered or other, feel free to ask.  
 
-#### Credit / Copyright:
+### Credit / Copyright:
 360chadscope: For making an awesome [Terraria mod](https://forums.terraria.org/index.php?threads/chads-furniture-and-more-mod.57562/), and for the suggestion/idea.  
 sjaak31367: Code  
 
@@ -81,5 +81,5 @@ I won't give any warranty for what you do or don't with script/software, I can t
 1) I (the writers) shall not be held liable.  
 2) Please do tell me as I'd be interested to see how that managed to happen.  
 
-#### Todo:
+### Todo:
 Maybe make a standalone version, and/or improve the code, but so far if it works, I don't see an incredible need to.   
