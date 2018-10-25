@@ -45,26 +45,26 @@ Image file in "outWalls" directory:
 
 ### FAQ / HELP!
 "Can it process multiple images in 1 run?"  
-- Yes, just put them all in the "inWalls" directory.  
+--Yes, just put them all in the "inWalls" directory.  
 
 "Does it delete the original/input image after use?"  
-- No.  
+--No.  
 
 "How do I use this?"  
-- Copy and open "inWalls/Example.png", the Red square will be texture 1, Green: texture 2, Blue: texture 3. Then save the file as "wallname.png" in "inWalls". Now run the script (see usage), and your wallified image should be found in "outWalls" under the same name.  
+--Copy and open "inWalls/Example.png", the Red square will be texture 1, Green: texture 2, Blue: texture 3. Then save the file as "wallname.png" in "inWalls". Now run the script (see usage), and your wallified image should be found in "outWalls" under the same name.  
 
 Errors:  
 "'python' is not recognized as an internal or command...":  
-  Windows cannot locate Python, make sure during the Python install to select "add to path", or open "Chads Wall Maker.cmd" in a text editor and replace `python` with wherever you installed Python/python.exe  
+--Windows cannot locate Python, make sure during the Python install to select "add to path", or open "Chads Wall Maker.cmd" in a text editor and replace `python` with wherever you installed Python/python.exe  
 
 "ImportError: No module named PIL":  
-  Python cannot find the Imaging library, did you install it in the correct place, and/or is it the correct python version/bits?  
+--Python cannot find the Imaging library, did you install it in the correct place, and/or is it the correct python version/bits?  
 
 "No walls/images found!":  
-  Either the images are too small, or they cannot be found in "inWalls".  
+--Either the images are too small, or they cannot be found in "inWalls".  
 
 "Error while saving, file already exists!" / "Attempted overwrites" / "0 walls successfully converted and saved!":  
-  By default this script won't overwrite already existing files, if you wish for it to do, open "Chads Wall Maker.py" in a text editor, and change `doNOToverwrite = True` to `doNOToverwrite = False` and hit save.  
+--By default this script won't overwrite already existing files, if you wish for it to do, open "Chads Wall Maker.py" in a text editor, and change `doNOToverwrite = True` to `doNOToverwrite = False` and hit save.  
 
 Other:  
 None that I can think of, if you have questions unanswered or other, feel free to ask.  
