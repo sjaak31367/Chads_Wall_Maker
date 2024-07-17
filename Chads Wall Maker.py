@@ -9,11 +9,11 @@ import os
 
 
 
-doNOToverwrite = True  # Set to `False` if you want to enable overwriting already existing image files in the "./outWalls" directory
+doNOToverwrite = True               # Set to `False` if you want to enable overwriting already existing image files in the "./outWalls" directory
 startDir = os.getcwd().replace('\\', '/') + '/'  # Find where this file is located
-inWalls = startDir + "inWalls/"  # Where are the input walls located?
-outWalls = startDir + "outWalls/"  # Where to put the processed walls
-minImageSize = (232, 88)  # Minimum Image size for it to be considered a wall
+inWalls = startDir + "inWalls/"     # Where are the input walls located?
+outWalls = startDir + "outWalls/"   # Where to put the processed walls
+minImageSize = (232, 88)            # Minimum Image size for it to be considered a wall
 wallLocations = [(162,54,178,70), (180,54,196,70), (198,54,214,70)]  # Where are the "source" textures located in the image
 wallPieces = ((0,0,1,2,0,0,0,1,2,0,0,0,0),
               (1,0,1,2,1,1,0,1,2,1,1,1,1),
@@ -27,37 +27,37 @@ wallPieces = ((0,0,1,2,0,0,0,1,2,0,0,0,0),
 # Input
 if os.path.exists(inWalls):
   if not os.path.isdir(inWalls):
-    print "Input location isn't a directory, making one now..."
+    print("Input location isn't a directory, making one now...")
     os.mkdir(inWalls)
     exit(code = 1)
 else:
-  print "Input location doesn't exist, making one now..."
+  print("Input location doesn't exist, making one now...")
   os.mkdir(inWalls)
   exit(code = 1)
 # Output
 if os.path.exists(outWalls):
   if not os.path.isdir(outWalls):
-    print "Input location isn't a directory, making one now..."
+    print("Input location isn't a directory, making one now...")
     os.mkdir(outWalls)
 else:
-  print "Input location doesn't exist, making one now..."
+  print("Input location doesn't exist, making one now...")
   os.mkdir(outWalls)
 
 
 
 # Look for input walls
-print "Input Directory:  " + inWalls
-print "Output Directory: " + outWalls
-print "Walls found in input directory:"
+print("Input Directory:  " + inWalls)
+print("Output Directory: " + outWalls)
+print("Walls found in input directory:")
 o = "   "
 walls = []
 for wall in os.listdir(inWalls):
   if wall.endswith(".png"):
     walls.append(wall)
     o += wall + ", "
-print o[:-2] + "\n"
+print(o[:-2] + "\n")
 if len(walls) == 0:
-  print "!  No walls/images found! Either add walls in \n   \"" + inWalls + "\"\n   Or check to make sure they are the correct size/format (and you have read access)!\nEXITING!"
+  print("!  No walls/images found! Either add walls in \n   \"" + inWalls + "\"\n   Or check to make sure they are the correct size/format (and you have read access)!\nEXITING!")
   exit(code = 3)
 
 
@@ -78,10 +78,10 @@ success = 0
 overwrites = 0
 notOverwrites = 0
 for wall in walls:  # Iterate over found walls
-  print "Wallifying wall:\t" + wall
+  print("Wallifying wall:\t" + wall)
   wallImage = Image.open(inWalls + wall, mode = 'r').convert("RGBA")  # Open image
   if not ((wallImage.height >= minImageSize[1]) & (wallImage.width >= minImageSize[0])):
-    print "!  Wall \"" + wall + "\" is too small!"  # If too small, skip image
+    print("!  Wall \"" + wall + "\" is too small!")  # If too small, skip image
   else:
     wall_0 = wallImage.crop(wallLocations[0])  # Get different wall type "source" images
     wall_1 = wallImage.crop(wallLocations[1])
@@ -148,7 +148,7 @@ for wall in walls:  # Iterate over found walls
     if os.path.exists(outWalls + wall):
       if os.path.isfile(outWalls + wall):
         if doNOToverwrite:
-          print "!  Error while saving, file already exists!"
+          print("!  Error while saving, file already exists!")
           notOverwrites += 1
         else:
           wallImage.save(outWalls + wall, "PNG")
@@ -164,10 +164,10 @@ for wall in walls:  # Iterate over found walls
 
 
 # Final outputs / stats
-print ""
-print str(success) + " walls successfully converted and saved!"
+print("")
+print(str(success) + " walls successfully converted and saved!")
 if overwrites > 0:
-  print str(overwrites) + " files overwritten! (if you do not want this, please see `doNOToverwrite`)"
+  print(str(overwrites) + " files overwritten! (if you do not want this, please see `doNOToverwrite`)")
 if ((notOverwrites > 0) or (success == 0)):
-  print str(notOverwrites) + " attempted overwrites, all blocked because of `doNOToverwrite = True` at the top of the file,"
-  print "if you do wish to overwrite existing files in the output directory, please change this to False."
+  print(str(notOverwrites) + " attempted overwrites, all blocked because of `doNOToverwrite = True` at the top of the file,")
+  print("if you do wish to overwrite existing files in the output directory, please change this to False.")

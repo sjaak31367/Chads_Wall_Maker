@@ -2,8 +2,8 @@
 Quick python script to create texture files for walls for in Terraria.
 
 ### Prerequisites:
-[Python 2.* 32-bit/x86](https://www.python.org/downloads/) - The language in which this was written  
-[Python Imaging Library](https://pypi.org/project/Pillow/#files) - Python module used for image manipulation (make sure to get the version build for the python version you installed, and has the same amount of bits (32/64) as the python installation) (If you're on Windows, scroll down all the way for the Windows installers)
+[Python](https://www.python.org/downloads/) - The language in which this was written  
+[Python Imaging Library](https://pypi.org/project/Pillow/#files) - Python module used for image manipulation (make sure to get the version build for the python version (2/3) you installed, and has the same amount of bits (32/64) as the python installation) (If you're on Windows, scroll down all the way for the Windows installers)
 
 ### First run:
 Windows:  
