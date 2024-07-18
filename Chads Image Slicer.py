@@ -70,6 +70,20 @@ def slice(inFilepath, outFilepath):
   global inImg, inPix, outImg, outPix, tmpImg
   inImg = Image.open(inFilepath, 'r').convert("RGBA")
   inPix = inImg.load()
+  width = ceil(inImg.width / (sectionSize))*(sectionSize+spacerSize)
+  height = ceil(inImg.height / (sectionSize))*(sectionSize+spacerSize)
+  outImg = Image.new("RGBA", (width, height), gridColour)
+
+  for ySec in range(ceil(inImg.height / sectionSize)):
+    for xSec in range(ceil(inImg.width / sectionSize)):
+      tmpImg = inImg.crop((xSec*sectionSize, \
+                           ySec*sectionSize, \
+                           (xSec+1)*sectionSize, \
+                           (ySec+1)*sectionSize))
+      outImg.paste(tmpImg, (xSec*(sectionSize+spacerSize), \
+                            ySec*(sectionSize+spacerSize)))
+
+  outImg.save(outFilepath)
 
 # Stitch away the seams
 def unslice(inFilepath, outFilepath):
@@ -79,7 +93,7 @@ def unslice(inFilepath, outFilepath):
   inPix = inImg.load()
   width = ceil(inImg.width / (sectionSize+spacerSize))*sectionSize
   height = ceil(inImg.height / (sectionSize+spacerSize))*sectionSize
-  outImg = Image.new("RGBA", (width, height), (0,0,0,0))
+  outImg = Image.new("RGBA", (width, height), gridColour)
   outPix = outImg.load()
 
   # get a crop of every little tile, and copy-paste the from input to output image
